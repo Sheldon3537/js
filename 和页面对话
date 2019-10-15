@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+        select {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input id="name" type="text">    
+    <button id="submit-btn" >Submit</button>            
+    <label>
+        <input id="school" name="status" type="radio">
+        School
+    </label>
+    <label>
+        <input id="company" name="status" type="radio">
+        Company
+    </label>
+
+    <select id="school-select">        
+        <option>北京邮电大学</option>
+        <option>黑龙江大学</option>
+        <option>华中科技大学</option>
+    </select>
+
+    <select id="company-select">        
+        <option>百度</option>
+        <option>爱奇艺</option>        
+    </select>
+</body>
+<script>
+        let btn = document.getElementById("submit-btn");
+        let ipt = document.getElementById("name");
+        let schSelect = document.getElementById("school-select");
+        let comSelect = document.getElementById("company-select");
+        let iptSchool = document.getElementById("school");
+        let iptCompany = document.getElementById("company");
+
+        btn.addEventListener("click",function(){
+            console.log(ipt.value)            
+        });
+        ipt.addEventListener("keydown",function(event){
+            switch(event.keyCode){
+                case 13:
+                    console.log(ipt.value);
+                    break;
+                case 27:
+                    ipt.value = ' ';
+                    break;
+            }
+
+        });
+        iptSchool.addEventListener("click",function(){
+            schSelect.style.display = "inline-block";
+        })
+        
+        iptCompany.addEventListener("click",function(){
+            comSelect.style.display = "inline-block";
+        })
+    
+</script>
+</html>
